@@ -6,27 +6,30 @@ $(document).ready(function(){
 		
 		var data = prompt('Por favor agrega un nombre a la lista');
 
-	});
-
-	// 2. Hacer un append en el tag '.names', donde crearemos un string que contenga:
+    // 2. Hacer un append en el tag '.names', donde crearemos un string que contenga:
       //a) Un li que englobe toda la información
       //b) Un span que contenga la información recibida desde el prompt
       //c) Un link con clase remove_name, que nos permitirá eliminar el elemento de la lista
+  
+  $(".names").append("<li><span>"+ data +"</span> <a href='#' class='remove_name'>eliminar</a></li>");
+	});
+
 	
-	$(".names").append("<li><span>" + data + "</span><a href='#' class='remove_name'>eliminar</a></li>")
 
 	//3. Mediante delegación de eventos le agreguemos a todos los links vacíos una prevención
     //de eventos para que cuando le hagamos click no aparezca en la URL el signo '#'.
 
-    $("a[href='#']").click(event, "#" , function(){
+    $(".names").on("click", "a[href='#']", function(event){
     	event.preventDefault();
     });
 
     //4. Crear una función que escuche el click del botón remove_name y seleccionará el li en
     //cuestión para luego borrarlo por medio del método remove() de jQuery.
 
-    $(".remove_name").click(function(){
-    	$("li").remove();
+
+    $(".names").on("click", ".remove_name", function(event){
+    	event.preventDefault();
+      $(this).parent().remove();
     });
 
 

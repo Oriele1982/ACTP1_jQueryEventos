@@ -7,7 +7,7 @@ $("li:nth-child(4)").append('<ul><li><a href="#">link 4.a</a></li></ul>');
 
 //2. Por medio de la misma selección anterior inserta, usando un before
 	//este otro string: '<li><a href="#">link 3.5</a></li>'
-$("li:nth-child(4)").before('<li><a href="#">link 3.5</a></li>')
+$("li:nth-child(4)").before('<li><a href="#">link 3.5</a></li>');
 
 //3. Seleccionar el li que contiene el link número 6 e inserta por medio del
 	//método prepend el string con el emoji: '😎 ' (emoji de la cara con los
